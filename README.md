@@ -10,7 +10,7 @@ source venv/bin/activate
 ```
 
 install libraries
-for some reason flas-sqlalchemy did install with the requirements.txt. If that happens install seperatly :).
+for some reason flas-sqlalchemy didn't install with the requirements.txt. If that happens install seperatly :).
 ```
 pip3 install -r requirements.txt
 sudo pip3 install flask flask-sqlalchemy
