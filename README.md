@@ -1,7 +1,9 @@
 # UselessIdeasApp
+Simple Flask Website to learn how it works :)
 
-use in venv
+![screen](https://user-images.githubusercontent.com/37297387/147669777-76c6b0fe-5f13-48c7-b247-2080ef8050cb.jpg)
 
+Use in venv
 ```
 python3 -m venv venv
 source venv/bin/activate
