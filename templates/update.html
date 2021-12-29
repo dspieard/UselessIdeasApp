@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block head %}
+    <title>Program Ideas</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="content" style="margin:20px" align="center">
+    <h1>Update Idea</h1>
+
+    <div class="form-group">
+        <form actions="/update/{{idea.id}}" method="POST">
+            
+            <div class="input-group mb-3" style="width: 500px;">
+                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" name="content" id="content" value="{{idea.content}}">
+                <div class="input-group-prepend">
+                    <button class="btn btn btn-dark" type="submit">Update</button>
+                </div>
+            </div>
+            </form>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+
+{% block head %}
+    <title>Program Ideas</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="content" style="margin:20px" align="center">
+    <h1>Useless But Not So Useless Project/Program Ideas</h1>
+    {% if ideas|length < 1 %}
+        <h4>There are no ideas :(</h4> 
+    {% else %}
+        <table class="table table-striped table-responsive w-auto">
+            <thead class="table-dark">
+                <tr> 
+                    <th scope="col" >Ideas</th>
+                    <th scope="col" >Added</th>
+                    <th scope="col" >Completed</th>
+                    <th scope="col" > Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                {% for idea in ideas %}   
+                    <td> {{ idea.content }} </td>
+                    <td> {{ idea.date_created.date() }} </td>
+                    <td align='center'> {% if idea.completed == 0%} <a href="/complete/{{idea.id}}">No</a> {% else %} <a href="/complete/{{idea.id}}">Yes</a> {% endif %} </td>
+                    <td>
+                        <a href="/delete/{{idea.id}}">Delete</a>
+                        <br>
+                        <a href="/update/{{idea.id}}">Update</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <div class="form-group">
+        <form actions="/" method="POST">
+            
+            <div class="input-group mb-3" style="width: 500px;">
+                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" name="content" id="content">
+                <div class="input-group-prepend">
+                    <button class="btn btn btn-dark" type="submit">Add Idea</button>
+                </div>
+            </div>
+            </form>
+
+</div>
+
+
+{% endblock %}
